@@ -38,10 +38,10 @@ FComputeShaderDeclaration::FComputeShaderDeclaration(const ShaderMetaType::Compi
 	OutputSurface.Bind(Initializer.ParameterMap, TEXT("OutputSurface"));
 }
 
-void FComputeShaderDeclaration::ModifyCompilationEnvironment(EShaderPlatform Platform, FShaderCompilerEnvironment& OutEnvironment)
+void FComputeShaderDeclaration::ModifyCompilationEnvironment(const FGlobalShaderPermutationParameters& Parameters, FShaderCompilerEnvironment& OutEnvironment)
 {
-	FGlobalShader::ModifyCompilationEnvironment(Platform, OutEnvironment);
-	OutEnvironment.CompilerFlags.Add(CFLAG_StandardOptimization);
+	FGlobalShader::ModifyCompilationEnvironment(Parameters, OutEnvironment);
+ 	OutEnvironment.CompilerFlags.Add(CFLAG_StandardOptimization);
 }
 
 void FComputeShaderDeclaration::SetSurfaces(FRHICommandList& RHICmdList, FUnorderedAccessViewRHIRef OutputSurfaceUAV)

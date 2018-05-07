@@ -4,8 +4,12 @@ using UnrealBuildTool;
 
 public class ShaderPluginDemo : ModuleRules
 {
-	public ShaderPluginDemo(TargetInfo Target)
+	public ShaderPluginDemo(ReadOnlyTargetRules Target) : base(Target)
 	{
+		//PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+
 		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "RHI", "PixelShader", "ComputeShader" });
+
+		PrivateDependencyModuleNames.AddRange(new string[] {  });
 	}
 }

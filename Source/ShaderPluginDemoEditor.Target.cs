@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 public class ShaderPluginDemoEditorTarget : TargetRules
 {
-	public ShaderPluginDemoEditorTarget(TargetInfo Target)
+	public ShaderPluginDemoEditorTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Editor;
-        ExtraModuleNames.Add("ShaderPluginDemo");
+		ExtraModuleNames.AddRange( new string[] { "ShaderPluginDemo" } );
     }
 
 }

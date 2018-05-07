@@ -83,6 +83,12 @@ class FVertexShaderExample : public FGlobalShader
 	DECLARE_SHADER_TYPE(FVertexShaderExample, Global);
 public:
 
+	static bool ShouldCompilePermutation(const FGlobalShaderPermutationParameters& Parameters)
+	{
+		// XXX Biggs ???
+		return true;
+	}
+
 	static bool ShouldCache(EShaderPlatform Platform) { return true; }
 
 	FVertexShaderExample(const ShaderMetaType::CompiledShaderInitializerType& Initializer) :
@@ -104,6 +110,12 @@ class FPixelShaderDeclaration : public FGlobalShader
 public:
 
 	FPixelShaderDeclaration() {}
+
+	static bool ShouldCompilePermutation(const FGlobalShaderPermutationParameters& Parameters)
+	{
+		// XXX Biggs ???
+		return true;
+	}
 
 	explicit FPixelShaderDeclaration(const ShaderMetaType::CompiledShaderInitializerType& Initializer);
 
